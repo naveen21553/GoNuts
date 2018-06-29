@@ -8,8 +8,7 @@
 <Application.Resources>
         <Style TargetType="Button" x:Key="ButtonStyle">
             <Setter Property="Background" Value="DarkSlateGray"/>
-            
-         <!--   <Setter Property="RelativePanel.AlignBottomWithPanel" Value="True"/>
+            <!--   <Setter Property="RelativePanel.AlignBottomWithPanel" Value="True"/>
             <Setter Property="RelativePanel.AlignTopWithPanel" Value="True"/>
             <Setter Property="RelativePanel.AlignVerticalCenterWithPanel" Value="True"/> -->
             <Setter Property="HorizontalAlignment" Value="Stretch"/>

@@ -10,7 +10,7 @@
 
     <Grid>
         <Grid.RowDefinitions>
-            <RowDefinition Height="1*"/>
+            <RowDefinition Height="*"/>
             <RowDefinition Height="6*"/>
         </Grid.RowDefinitions>
         <Grid.ColumnDefinitions>
@@ -47,9 +47,17 @@
                 <TextBlock Text="Complete" />
             </StackPanel>
         </Button>
-        <RelativePanel Grid.Row="1" Grid.ColumnSpan="4">
+        
+        <Grid Grid.Row="1" Grid.ColumnSpan="4">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="4*"/>
+                <ColumnDefinition Width="2*"/>
+            </Grid.ColumnDefinitions>
+            
             <Frame Name="SecondaryFrame"/>
-        </RelativePanel>
+            
+            <Image Grid.Column="1" Source="/assets/background.jpg" Stretch="UniformToFill"/>
+        </Grid>
             
        
     </Grid>
