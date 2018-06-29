@@ -43,7 +43,7 @@ namespace GoNuts
             SecondaryFrame.Navigate(typeof(Schedule));
         }
 
-        private void ButtonComplete_Click(object sender, RoutedEventArgs e)
+        private void ButtonComplete_Click(object sender, RoutedEventArgs e) 
         {
             SecondaryFrame.Navigate(typeof(Complete));
         }

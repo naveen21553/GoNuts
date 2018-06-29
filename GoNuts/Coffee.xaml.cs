@@ -61,6 +61,7 @@ namespace GoNuts
 
                 if (_sugar != "None" && !string.IsNullOrEmpty(_sugar))
                     CoffeeType.Text += " + " + _sugar;
+            
             }
 
             else CoffeeType.Text = "None";

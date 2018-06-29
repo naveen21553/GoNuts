@@ -9,16 +9,20 @@
     Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
 
     <Grid>
-        
-        <StackPanel Margin="20,20,20,20" MinWidth="2000">
-            <Image HorizontalAlignment="Left" Source="/assets/color-logo.png" Width="200" />
+        <Grid.RowDefinitions>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="auto"/>
+        </Grid.RowDefinitions>
+        <Image HorizontalAlignment="Left" Source="/assets/color-logo.png" Width="200" />
 
-            <Canvas>    
-                <Image HorizontalAlignment="Left" Source="/assets/ticket.jpg" Margin="150,20,0,0" Width="500"/>
-                <TextBlock Text="96" FontSize="144" HorizontalAlignment="Left" Margin="330,170,0,0" />
-            </Canvas>
-
+        <Image Grid.Row="1" HorizontalAlignment="Center" Source="/assets/ticket.jpg" VerticalAlignment="Center" Width="300"/>
+        <StackPanel Grid.Row="1" HorizontalAlignment="Center" VerticalAlignment="Center">
+            <TextBlock Text="Order" FontSize="36" HorizontalAlignment="Center"/>
+            <TextBlock Text="96" FontSize="72" HorizontalAlignment="Center" />
         </StackPanel>
+        
+            
 
+        
     </Grid>
 </Page>
