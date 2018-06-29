@@ -22,40 +22,48 @@ namespace GoNuts
     /// </summary>
     public sealed partial class Coffee : Page
     {
+        private string _roast, _sugar, _cream;
         public Coffee()
         {
             this.InitializeComponent();
         }
+        
 
-
-        private void MenuFlyout_Closing(FlyoutBase sender, FlyoutBaseClosingEventArgs args)
+        private void RoastNone_Click(object sender, RoutedEventArgs e)
         {
-            SelectedText.Text += "\t";
-            if(RoastDark.IsChecked)
-                SelectedText.Text += "Roast: Dark + ";
-            else if (RoastMedium.IsChecked)
-                SelectedText.Text += "Roast: Medium + ";
-            else if (RoastNone.IsChecked)
-                SelectedText.Text += "Roast: None + ";
+            var Selected = (MenuFlyoutItem)sender;
+            _roast = Selected.Text;
+            ShowCoffeeType();
         }
 
-        private void MenuFlyout_Closing_1(FlyoutBase sender, FlyoutBaseClosingEventArgs args)
+        private void SugarNone_Click(object sender, RoutedEventArgs e)
         {
-            if (SugarExtra.IsChecked)
-                SelectedText.Text += "Sugar: Extra + ";
-            else if (SugarMedium.IsChecked)
-                SelectedText.Text += "Sugar: Medium + ";
-            else if (SugarNone.IsChecked)
-                SelectedText.Text += "Sugar: None + ";
+            var Selected = (MenuFlyoutItem)sender;
+            _sugar = Selected.Text;
+            ShowCoffeeType();
         }
-        private void MenuFlyout_Closing_2(FlyoutBase sender, FlyoutBaseClosingEventArgs args)
+
+        private void CreamNone_Click(object sender, RoutedEventArgs e)
         {
-            if (CreamFullMilk.IsChecked)
-                SelectedText.Text += "Cream: Full Milk";
-            else if (CreamMedium.IsChecked)
-                SelectedText.Text += "Cream: 2% Milk";
-            else if (CreamNone.IsChecked)
-                SelectedText.Text += "Cream: None";
+            var Selected = (MenuFlyoutItem)sender;
+            _cream = Selected.Text;
+            ShowCoffeeType();
+        }
+
+        private void ShowCoffeeType()
+        {
+            if (_roast != "None" && !string.IsNullOrEmpty(_roast))
+            {
+                CoffeeType.Text = _roast;
+
+                if (_cream != "None" && !string.IsNullOrEmpty(_cream))
+                    CoffeeType.Text += " + " + _cream;
+
+                if (_sugar != "None" && !string.IsNullOrEmpty(_sugar))
+                    CoffeeType.Text += " + " + _sugar;
+            }
+
+            else CoffeeType.Text = "None";
         }
     }
 }

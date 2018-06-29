@@ -13,40 +13,44 @@
         <StackPanel Margin="20,20,20,20" MinWidth="2000">
             <Image HorizontalAlignment="Left" Source="/assets/white-logo.png" Width="200" />
 
-            <StackPanel  Orientation="Horizontal" Margin="30,50,0,0">
-                <Button Content="Roast" Foreground="White" Margin="30,0,0,0">
+            <StackPanel Orientation="Horizontal" Margin="30,50,0,0">
+                <Button Content="Roast" Foreground="White" Margin="0,0,0,0">
                     <Button.Flyout>
-                        <MenuFlyout Closing="MenuFlyout_Closing">
-                            <ToggleMenuFlyoutItem Text="None" Name="RoastNone"/>
-                            <ToggleMenuFlyoutItem Text="Dark" Name="RoastDark" />
-                            <ToggleMenuFlyoutItem Text="Medium" Name="RoastMedium" />
+                        <MenuFlyout>
+                            <MenuFlyoutItem Text="None" Name="RoastNone" Click="RoastNone_Click"/>
+                            <MenuFlyoutItem Text="Dark" Name="RoastDark" Click="RoastNone_Click"/>
+                            <MenuFlyoutItem Text="Medium" Name="RoastMedium" Click="RoastNone_Click"/>
                         </MenuFlyout>
                     </Button.Flyout>
                 </Button>
                 
                 <Button Content="Sweetener" Foreground="White" Margin="30,0,0,0">
                     <Button.Flyout>
-                        <MenuFlyout Closing="MenuFlyout_Closing_1">
-                            <ToggleMenuFlyoutItem Text="None" Name="SugarNone"/>
-                            <ToggleMenuFlyoutItem Text="Extra" Name="SugarExtra"/>
-                            <ToggleMenuFlyoutItem Text="Medium" Name="SugarMedium"/>
+                        <MenuFlyout>
+                            <MenuFlyoutItem Text="None" Name="SugarNone" Click="SugarNone_Click"/>
+                            <MenuFlyoutItem Text="Extra" Name="SugarExtra" Click="SugarNone_Click"/>
+                            <MenuFlyoutItem Text="Medium" Name="SugarMedium" Click="SugarNone_Click"/>
                         </MenuFlyout>
                     </Button.Flyout>
                 </Button>
                 
                 <Button Content="Cream" Foreground="White" Margin="30,0,0,0">
                     <Button.Flyout>
-                        <MenuFlyout Closing="MenuFlyout_Closing_2" >
-                            <ToggleMenuFlyoutItem Text="None" Name="CreamNone"/>
-                            <ToggleMenuFlyoutItem Text="2% Milk" Name="CreamMedium"/>
-                            <ToggleMenuFlyoutItem Text="Whole Milk" Name="CreamFullMilk"/>
+                        <MenuFlyout>
+                            <MenuFlyoutItem Text="None" Name="CreamNone" Click="CreamNone_Click"/>
+                            <MenuFlyoutItem Text="2% Milk" Name="CreamMedium" Click="CreamNone_Click"/>
+                            <MenuFlyoutItem Text="Whole Milk" Name="CreamFullMilk" Click="CreamNone_Click"/>
                         </MenuFlyout>
                     </Button.Flyout>
                 </Button>
             
             </StackPanel>
-
-            <TextBlock Foreground="White" Name="SelectedText" Margin="30,50,0,0" Text="Coffee: "/>
+            <StackPanel Orientation="Horizontal">
+                <TextBlock Foreground="White" Margin="30,50,0,0" Text="Coffee: "/>
+                <TextBlock Foreground="White" Margin="30,50,0,0" Name="CoffeeType"/>
+            </StackPanel>
+            
+            
         </StackPanel>
 
         
